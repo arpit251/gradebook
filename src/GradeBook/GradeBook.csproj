@@ -5,4 +5,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Random.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Random.txt" />
+  </ItemGroup>
+
 </Project>
