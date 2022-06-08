@@ -10,11 +10,12 @@ namespace GradeBook
         public Book(string name)
         {
             this.grades = new List<double>();
-            this.Name = name;
+            this.name = name;
+            this.category = "Maths";
         }
         public void UpdateName(string name)
         {
-            this.Name = name;
+            this.name = name;
         }
         public void Addgrade(char x)
         {
@@ -53,7 +54,7 @@ namespace GradeBook
         }
         public void ShowName()
         {
-            Console.WriteLine($"The Name of this Book is {this.Name}");
+            Console.WriteLine($"The Name of this Book is {this.name}");
         }
         public void compute_statistics()
         {
@@ -123,10 +124,42 @@ namespace GradeBook
             }
             return min_value;
         }
-        // Private Methods and variables can be accessed only inside the class 
-        public string Name ;
+        // Private Methods and fields can be accessed only inside the class 
+        private string name;
         // Can be accessed outside of the class 
         public List<double> grades;
         private double average, max, min,sum;
+        // Defining Property
+        public string Name
+        {
+            get
+            {
+                return name.ToUpper();
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
+            }
+        }
+        /*
+         * can also write the property using just get set No need to write the required field for the variable
+         * c# will create it on its own. Also getter and setter gives us more option and flexibility
+         * public string name
+         * {
+         *      get;
+         *      private set;
+         * }
+         * using above property gives us a option that we can get the name of the book but we can change the name of the book
+         */
+        // we can moidfy the readonly fields inside the constructor of the function
+        readonly string category = "Subject";
+        // const field -> if behaves like the statis member of the class means we can access it by class name mot by instance name
+        // It is generally written in capital for better understanding
+        public const string SECOND_CATEGORY = "YES";
+        
+
     }
 }

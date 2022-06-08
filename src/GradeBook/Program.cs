@@ -18,21 +18,21 @@ namespace GradeBook
                     break;
                 }
                 try 
-	            {	        
-		            var grade = double.Parse(input);
+                {	        
+                    var grade = double.Parse(input);
                     newbook.Addgrade(grade);
-	            }
-	            catch (ArgumentException ex)
-	            {
+                }
+                catch (ArgumentException ex)
+                {
                     Console.WriteLine(ex.Message);
-	            }
+                }
                 catch(FormatException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
                 finally
                 {
-                    Console.WriteLine(".....");
+                   //pass
                 }
                 
             }
